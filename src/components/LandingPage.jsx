@@ -3,6 +3,7 @@ import HeroSection from './HeroSection'
 import RealityCheck from './RealityCheck'
 import Solution from './Solution'
 import TechTrust from './TechTrust'
+import NotAProduct from './NotAProduct'
 import Footer from './Footer'
 import Header from './Header'
 
@@ -14,6 +15,7 @@ const LandingPage = () => {
       <RealityCheck />
       <Solution />
       <TechTrust />
+      <NotAProduct />
       <Footer />
     </div>
   )

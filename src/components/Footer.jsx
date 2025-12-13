@@ -1,7 +1,40 @@
 import React, { useState } from 'react'
-import { Send, CheckCircle, Phone, User, GraduationCap } from 'lucide-react'
+import { Send, CheckCircle, Phone, User, GraduationCap, Linkedin, Facebook, Instagram, Twitter, Youtube } from 'lucide-react'
 import { submitLead } from '../services/api'
 import logo from '../assets/logo.jpeg'
+
+const socialLinks = [
+    {
+        name: 'LinkedIn',
+        url: 'https://www.linkedin.com/company/niyantran/',
+        icon: Linkedin,
+        hoverColor: 'hover:text-[#0A66C2]'
+    },
+    {
+        name: 'Facebook',
+        url: 'https://www.facebook.com/profile.php?id=61584661715396',
+        icon: Facebook,
+        hoverColor: 'hover:text-[#1877F2]'
+    },
+    {
+        name: 'Instagram',
+        url: 'https://www.instagram.com/theniyantran',
+        icon: Instagram,
+        hoverColor: 'hover:text-[#E4405F]'
+    },
+    {
+        name: 'X (Twitter)',
+        url: 'https://x.com/theniyantran',
+        icon: Twitter,
+        hoverColor: 'hover:text-white'
+    },
+    {
+        name: 'YouTube',
+        url: 'https://youtube.com/@theniyantran',
+        icon: Youtube,
+        hoverColor: 'hover:text-[#FF0000]'
+    }
+]
 
 const Footer = () => {
     const [formData, setFormData] = useState({
@@ -191,7 +224,7 @@ const Footer = () => {
                     {/* Additional Info */}
                     <div className="mt-12 text-center">
                         <p className="text-gray-300 mb-4">
-                            Join 500+ families who have transformed their child's learning journey
+                            Join Thousands+ families who have transformed their child's learning journey
                         </p>
                         <div className="flex justify-center space-x-2">
                             <span className="text-2xl">⭐</span>
@@ -214,6 +247,22 @@ const Footer = () => {
                             <div className="text-center md:text-left">
                                 <p className="text-sm text-gray-400">Building Discipline, Focus & Self-Study Habits</p>
                             </div>
+                        </div>
+
+                        {/* Social Media Links */}
+                        <div className="flex items-center space-x-4">
+                            {socialLinks.map((social) => (
+                                <a
+                                    key={social.name}
+                                    href={social.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={`text-gray-400 ${social.hoverColor} transition-colors duration-300`}
+                                    aria-label={social.name}
+                                >
+                                    <social.icon className="w-6 h-6" />
+                                </a>
+                            ))}
                         </div>
 
                         <div className="text-center md:text-right">
