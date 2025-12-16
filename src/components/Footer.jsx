@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Send, CheckCircle, Phone, User, GraduationCap, Linkedin, Facebook, Instagram, Twitter, Youtube } from 'lucide-react'
 import { submitLead } from '../services/api'
-import logo from '../assets/logo.jpeg'
+import logo from '../assets/logo.jpg'
 
 const socialLinks = [
     {

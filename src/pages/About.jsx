@@ -1,17 +1,9 @@
 import React from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import { Heart, Target, Eye, Users, BookOpen, CheckCircle, ArrowRight, Sparkles, Shield } from 'lucide-react'
+import { Heart, Target, Eye, Users, BookOpen, CheckCircle, ArrowRight, Sparkles, Shield, UserCircle } from 'lucide-react'
 
 const About = () => {
-  const whoWeServe = [
-    'Working parents',
-    'Middle-class & upper-middle-class families',
-    'Students who struggle with self-study',
-    'Average & below-average learners who need guidance',
-    'Parents who want peace of mind'
-  ]
-
   const childImpact = [
     'Studying independently',
     'Becoming more disciplined',
@@ -25,10 +17,28 @@ const About = () => {
     'More confident about their child\'s future'
   ]
 
+  const founders = [
+    {
+      name: 'Kunal Kishore',
+      role: 'Founder, CEO',
+      image: '/src/assets/kunal.png'
+    },
+    {
+      name: 'Keshav Raj',
+      role: 'Co-Founder, Marketing and Human Resource',
+      image: '/src/assets/keshav.png'
+    },
+    {
+      name: 'Rakesh Ranjan',
+      role: 'CTO, Technical Head',
+      image: '/src/assets/rakesh.png'
+    }
+  ]
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-niyantran-deep-blue via-niyantran-blue to-niyantran-deep-blue">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="section-container py-20 text-white">
         <div className="max-w-4xl mx-auto text-center">
@@ -125,32 +135,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Who We Serve */}
-      <section className="bg-gray-50 py-20">
-        <div className="section-container">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-niyantran-deep-blue mb-8 text-center">
-              Who We Serve
-            </h2>
-            <p className="text-lg text-center text-gray-600 mb-8">Niyantran is designed for:</p>
-            <div className="space-y-4 max-w-2xl mx-auto">
-              {whoWeServe.map((item, index) => (
-                <div key={index} className="flex items-center space-x-4 bg-white rounded-xl p-4 shadow-md">
-                  <CheckCircle className="w-6 h-6 text-niyantran-orange flex-shrink-0" />
-                  <p className="text-gray-700 font-medium">{item}</p>
-                </div>
-              ))}
-            </div>
-            <div className="mt-8 text-center">
-              <p className="text-lg text-gray-600">
-                Whether a child studies in an English-medium or regional school —<br />
-                <span className="font-bold text-niyantran-deep-blue">Niyantran fits every home.</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Our Impact */}
       <section className="bg-gradient-to-r from-niyantran-orange to-niyantran-gold py-20 text-white">
         <div className="section-container">
@@ -220,6 +204,41 @@ const About = () => {
               <p className="text-lg leading-relaxed">
                 To make self-study a <span className="text-niyantran-gold font-bold">daily habit in every Indian household</span> and create a discipline-driven education revolution.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Founders */}
+      <section className="bg-gray-50 py-20">
+        <div className="section-container">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-niyantran-deep-blue mb-12 text-center">
+              Our Founders
+            </h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              {founders.map((founder, index) => (
+                <div key={index} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-32 h-32 rounded-full overflow-hidden mb-6 border-4 border-niyantran-blue shadow-lg">
+                      <img 
+                        src={founder.image} 
+                        alt={founder.name}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          e.target.style.display = 'none';
+                          e.target.nextSibling.style.display = 'flex';
+                        }}
+                      />
+                      <div className="hidden bg-gradient-to-br from-niyantran-blue to-niyantran-deep-blue w-full h-full items-center justify-center">
+                        <UserCircle className="w-20 h-20 text-white" />
+                      </div>
+                    </div>
+                    <h3 className="text-xl font-bold text-niyantran-deep-blue mb-2">{founder.name}</h3>
+                    <p className="text-gray-600 font-medium">{founder.role}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
