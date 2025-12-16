@@ -66,7 +66,7 @@ const RealityCheck = () => {
             The problem isn't your child. It's the lack of a systematic approach to building study habits.
           </p>
           <div className="inline-flex items-center space-x-2 bg-niyantran-orange px-6 py-3 rounded-lg font-semibold">
-            <span>Niyantran has the solution ↓</span>
+            <span>Niyantran is the solution ↓</span>
           </div>
         </div>
       </div>

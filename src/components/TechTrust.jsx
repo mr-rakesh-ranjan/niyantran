@@ -6,7 +6,7 @@ const TechTrust = () => {
     {
       icon: <Camera className="w-12 h-12" />,
       title: "Photo Proof System",
-      description: "Parents can see exactly what page the child wrote at 4:15 AM. Every study session documented with timestamps.",
+      description: "Parents can see exactly what page the child wrote at 5:15 AM. Every study session documented with timestamps.",
       highlight: "100% Transparency"
     },
     {
@@ -58,7 +58,7 @@ const TechTrust = () => {
                   </div>
                   <div className="bg-white/20 rounded-lg p-3">
                     <p className="text-sm opacity-90">Today's Progress</p>
-                    <p className="text-2xl font-bold">4:05 AM - Session Active</p>
+                    <p className="text-2xl font-bold">5:05 AM - Session Active</p>
                   </div>
                 </div>
 
@@ -70,7 +70,7 @@ const TechTrust = () => {
                       <CheckCircle className="w-5 h-5 text-green-500 mt-1" />
                       <div className="flex-1">
                         <p className="font-semibold text-niyantran-deep-blue text-sm">Wake-up Verified</p>
-                        <p className="text-xs text-gray-500">Photo uploaded at 4:03 AM</p>
+                        <p className="text-xs text-gray-500">Photo uploaded at 5:03 AM</p>
                       </div>
                       <span className="text-xs text-gray-400">Just now</span>
                     </div>
@@ -83,7 +83,7 @@ const TechTrust = () => {
                         <p className="font-semibold text-niyantran-deep-blue text-sm">Math - Ch 5, Page 87</p>
                         <p className="text-xs text-gray-500">15 problems solved</p>
                       </div>
-                      <span className="text-xs text-gray-400">4:35 AM</span>
+                      <span className="text-xs text-gray-400">5:35 AM</span>
                     </div>
                   </div>
 

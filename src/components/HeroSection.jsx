@@ -22,7 +22,7 @@ const HeroSection = () => {
             {/* Badge */}
             <div className="inline-flex items-center space-x-2 bg-niyantran-orange/20 border border-niyantran-orange px-4 py-2 rounded-full">
               <Sunrise className="w-5 h-5 text-niyantran-gold" />
-              <span className="text-sm font-semibold text-niyantran-gold">Join the 4 AM Club</span>
+              <span className="text-sm font-semibold text-niyantran-gold">Join the 5 AM Club</span>
             </div>
 
             {/* Main Headline */}
@@ -33,7 +33,7 @@ const HeroSection = () => {
 
             {/* Sub-Headline */}
             <p className="text-xl md:text-2xl text-gray-200 leading-relaxed">
-              We don't just teach subjects. We build{' '}
+              We build{' '}
               <span className="font-bold text-white">Discipline</span>,{' '}
               <span className="font-bold text-white">Focus</span>, and{' '}
               <span className="font-bold text-white">Self-Study Habits</span>.
@@ -53,7 +53,7 @@ const HeroSection = () => {
             {/* Limited Slots Badge */}
             <div className="flex items-center space-x-2 text-niyantran-gold">
               <AlertCircle className="w-5 h-5" />
-              <span className="text-sm font-semibold">Limited slots for the 4 AM Club</span>
+              <span className="text-sm font-semibold">Limited slots for the 5 AM Club</span>
             </div>
           </div>
 
@@ -73,12 +73,12 @@ const HeroSection = () => {
                 </div>
               </div>
 
-              {/* Right Image - Focused Child at 4 AM */}
+              {/* Right Image - Focused Child at 5 AM */}
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-green-500">
                 <div className="bg-gradient-to-br from-niyantran-light-blue to-white p-8 h-80 flex flex-col items-center justify-center">
                   <div className="text-6xl mb-4">📚</div>
-                  <p className="text-niyantran-deep-blue text-center font-bold">4:00 AM</p>
-                  <p className="text-niyantran-blue text-sm text-center mt-2">Writing in diary</p>
+                  <p className="text-niyantran-deep-blue text-center font-bold">5:00 AM</p>
+                  <p className="text-niyantran-blue text-sm text-center mt-2">Morning Builds Minds🧠</p>
                   <p className="text-niyantran-blue text-sm text-center">Focused & Sharp</p>
                 </div>
                 <div className="absolute top-0 right-0 bg-green-500 text-white px-3 py-1 text-xs font-bold rounded-bl-lg">

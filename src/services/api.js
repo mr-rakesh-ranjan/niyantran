@@ -1,58 +1,51 @@
 // API Service for Niyantran Landing Page
-// This file handles API calls to the backend
+// This file handles API calls to Firebase Firestore
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+import { db } from './firebase';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 /**
- * Submit lead form data to backend
+ * Submit lead form data to Firebase Firestore
  * This will:
- * 1. Save lead to database
- * 2. Trigger WhatsApp notification to parent
- * 3. Send notification to admin/mentor
+ * 1. Save lead to Firestore 'leads' collection
+ * 2. Store all consultation booking details
  */
 export const submitLead = async (leadData) => {
   try {
-    const response = await fetch(`${API_BASE_URL}/leads`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        parentName: leadData.parentName,
-        childClass: leadData.childClass,
-        whatsappNumber: leadData.whatsappNumber,
-        source: 'landing_page',
-        timestamp: new Date().toISOString()
-      })
+    // Add document to 'leads' collection in Firestore
+    const docRef = await addDoc(collection(db, 'leads'), {
+      parentName: leadData.parentName,
+      childClass: leadData.childClass,
+      whatsappNumber: leadData.whatsappNumber,
+      source: 'landing_page',
+      status: 'new', // Track lead status: new, contacted, converted, etc.
+      createdAt: serverTimestamp(),
+      updatedAt: serverTimestamp()
     });
 
-    if (!response.ok) {
-      throw new Error('Failed to submit lead');
-    }
-
-    return await response.json();
+    console.log('Lead submitted successfully with ID:', docRef.id);
+    
+    return { 
+      success: true, 
+      id: docRef.id,
+      message: 'Consultation booked successfully!' 
+    };
   } catch (error) {
-    console.error('Error submitting lead:', error);
+    console.error('Error submitting lead to Firebase:', error);
     throw error;
   }
 };
 
 /**
- * Track page analytics events
+ * Track page analytics events to Firebase
  * Useful for understanding user behavior
  */
 export const trackEvent = async (eventName, eventData) => {
   try {
-    await fetch(`${API_BASE_URL}/analytics/track`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        event: eventName,
-        data: eventData,
-        timestamp: new Date().toISOString()
-      })
+    await addDoc(collection(db, 'analytics'), {
+      event: eventName,
+      data: eventData,
+      timestamp: serverTimestamp()
     });
   } catch (error) {
     console.error('Error tracking event:', error);
