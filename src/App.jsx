@@ -5,6 +5,7 @@ import About from './pages/About'
 import Careers from './pages/Careers'
 import Blogs from './pages/Blogs'
 
+
 function App() {
   return (
     <BrowserRouter>

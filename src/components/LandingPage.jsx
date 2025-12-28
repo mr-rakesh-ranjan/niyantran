@@ -6,11 +6,13 @@ import TechTrust from './TechTrust'
 import Testimonials from './Testimonials'
 import Footer from './Footer'
 import Header from './Header'
+import Carousel from './Carousel'
 
 const LandingPage = () => {
   return (
     <div className="min-h-screen">
       <Header />
+      <Carousel />
       <HeroSection />
       <RealityCheck />
       <Solution />

@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import { Heart, Target, Eye, Users, BookOpen, CheckCircle, ArrowRight, Sparkles, Shield, UserCircle } from 'lucide-react'
+
+import ContactUsModal from '../components/ContactUsModal'
 
 const About = () => {
   const childImpact = [
@@ -19,14 +21,14 @@ const About = () => {
 
   const founders = [
     {
-      name: 'Kunal Kishore',
-      role: 'Founder, CEO',
-      image: '/src/assets/kunal.png'
-    },
-    {
       name: 'Keshav Raj',
       role: 'Co-Founder, Marketing and Human Resource',
-      image: '/src/assets/keshav.png'
+      image: '/src/assets/keshav.jpeg'
+    },
+    {
+      name: 'Kishore Kunal',
+      role: 'Founder, CEO',
+      image: '/src/assets/kunal.jpeg'
     },
     {
       name: 'Rakesh Ranjan',
@@ -35,9 +37,11 @@ const About = () => {
     }
   ]
 
+  const [modalOpen, setModalOpen] = useState(false);
   return (
     <div className="min-h-screen bg-gradient-to-br from-niyantran-deep-blue via-niyantran-blue to-niyantran-deep-blue">
       <Header />
+      <ContactUsModal open={modalOpen} onClose={() => setModalOpen(false)} />
 
       {/* Hero Section */}
       <section className="section-container py-20 text-white">
@@ -181,29 +185,30 @@ const About = () => {
         </div>
       </section>
 
-      {/* Mission & Vision */}
+      {/* Mission & CEO Vision Two Column */}
       <section className="bg-white py-20">
         <div className="section-container">
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
             {/* Mission */}
-            <div className="bg-niyantran-deep-blue text-white rounded-2xl p-8 md:p-10">
+            <div className="bg-niyantran-deep-blue text-white rounded-2xl p-8 md:p-10 flex flex-col justify-center shadow-lg">
               <div className="flex items-center space-x-3 mb-6">
-                <Target className="w-10 h-10 text-niyantran-gold" />
+                <Target className="w-8 h-8 text-niyantran-gold" />
                 <h2 className="text-2xl md:text-3xl font-bold">Our Mission</h2>
               </div>
               <p className="text-lg leading-relaxed">
-                To build a generation of <span className="text-niyantran-gold font-bold">self-disciplined, self-motivated learners</span> across India.
+                At Niyantran, our mission is to rebuild the habit of self-study, discipline, and focus among children in the digital age.<br /><br />
+                In a time where mobile dependency, constant supervision, and pressure-based learning have weakened independent thinking, we aim to guide children back to structured routines, writing practice, and consistent self-learning. We do this through daily mentorship, personalized study routines, and continuous follow-ups — not by teaching content, but by teaching how to learn.<br /><br />
+                Our mission is to support parents, empower children, and strengthen India’s learning culture by creating self-driven learners who study with responsibility, confidence, and clarity — preparing them not just for exams, but for life.
               </p>
             </div>
-            {/* Vision */}
-            <div className="bg-niyantran-blue text-white rounded-2xl p-8 md:p-10">
+            {/* CEO Vision */}
+            <div className="bg-niyantran-blue text-white rounded-2xl p-8 md:p-10 flex flex-col justify-center shadow-lg">
               <div className="flex items-center space-x-3 mb-6">
-                <Eye className="w-10 h-10 text-niyantran-gold" />
-                <h2 className="text-2xl md:text-3xl font-bold">Our Vision</h2>
+                <Eye className="w-8 h-8 text-niyantran-gold" />
+                <h2 className="text-2xl md:text-3xl font-bold flex items-center gap-2"><span role="img" aria-label="globe"></span> Vision – Niyantran</h2>
               </div>
-              <p className="text-lg leading-relaxed">
-                To make self-study a <span className="text-niyantran-gold font-bold">daily habit in every Indian household</span> and create a discipline-driven education revolution.
-              </p>
+              <p className="text-lg leading-relaxed mb-2">Founded by Kishore Kunal, Niyantran envisions rebuilding India’s self-study culture in a digital-first world. As mobile dependency and constant supervision increase, children are gradually losing focus, discipline, and the ability to study independently. While access to education has expanded, the habit of self-driven learning has weakened.</p>
+              <p className="text-lg leading-relaxed mb-2">Niyantran aims to help children learn how to learn, not just what to learn. Through structured routines, daily mentorship, and discipline-based guidance, we strive to create confident, responsible learners. Our vision is to strengthen India’s academic foundation by nurturing focused minds that can contribute meaningfully to the nation and compete on a global stage.</p>
             </div>
           </div>
         </div>
@@ -252,7 +257,7 @@ const About = () => {
               Join thousands of parents who have already taken control of their child's study habits.
             </p>
             <button 
-              onClick={() => document.getElementById('lead-form')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => setModalOpen(true)}
               className="inline-flex items-center space-x-2 bg-niyantran-orange hover:bg-niyantran-gold text-white font-bold py-4 px-8 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105"
             >
               <span>Get Started Today</span>
