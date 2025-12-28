@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import ContactUsModal from './ContactUsModal'
 import { Send, CheckCircle, Phone, User, GraduationCap, Linkedin, Facebook, Instagram, Twitter, Youtube } from 'lucide-react'
 import { submitLead } from '../services/api'
-import logo from '../assets/3d.jpg'
+import logo from '../assets/3D.jpg'
 
 const socialLinks = [
     {
