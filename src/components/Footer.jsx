@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import ContactUsModal from './ContactUsModal'
 import { Send, CheckCircle, Phone, User, GraduationCap, Linkedin, Facebook, Instagram, Twitter, Youtube } from 'lucide-react'
 import { submitLead } from '../services/api'
@@ -81,17 +82,17 @@ const Footer = () => {
                     <div>
                         <h4 className="font-bold mb-4 tracking-wider text-niyantran-gold">CATEGORIES</h4>
                         <ul className="space-y-2">
-                            <li><a href="/" className="hover:text-niyantran-gold transition-colors">Home</a></li>
-                            <li><a href="/about" className="hover:text-niyantran-gold transition-colors">About Us</a></li>
-                            <li><a href="/blogs" className="hover:text-niyantran-gold transition-colors">Blogs</a></li>
-                            <li><a href="/careers" className="hover:text-niyantran-gold transition-colors">Careers</a></li>
+                            <li><Link to="/" className="hover:text-niyantran-gold transition-colors">Home</Link></li>
+                            <li><Link to="/about" className="hover:text-niyantran-gold transition-colors">About Us</Link></li>
+                            <li><Link to="/blogs" className="hover:text-niyantran-gold transition-colors">Blogs</Link></li>
+                            <li><Link to="/careers" className="hover:text-niyantran-gold transition-colors">Careers</Link></li>
                         </ul>
                     </div>
                     {/* Our Pages */}
                     <div>
                         <h4 className="font-bold mb-4 tracking-wider text-niyantran-gold">OUR PAGES</h4>
                         <ul className="space-y-2">
-                            <li><a href="/careers" className="hover:text-niyantran-gold transition-colors">Career</a></li>
+                            <li><Link to="/careers" className="hover:text-niyantran-gold transition-colors">Career</Link></li>
                             <li><button type="button" className="hover:text-niyantran-gold transition-colors bg-transparent border-0 p-0 m-0 cursor-pointer" onClick={() => setShowContactModal(true)}>Contact Us</button></li>
                         </ul>
                     </div>
