@@ -4,6 +4,9 @@ import Footer from '../components/Footer'
 import { Heart, Target, Eye, Users, BookOpen, CheckCircle, ArrowRight, Sparkles, Shield, UserCircle } from 'lucide-react'
 
 import ContactUsModal from '../components/ContactUsModal'
+import kunalImage from '../assets/kunal.jpeg'
+import keshavImage from '../assets/keshav.jpeg'
+import rakeshImage from '../assets/rakesh.png'
 
 const About = () => {
   const childImpact = [
@@ -23,17 +26,17 @@ const About = () => {
     {
       name: 'Keshav Raj',
       role: 'Co-Founder, Marketing and Human Resource',
-      image: '/src/assets/keshav.jpeg'
+      image: keshavImage
     },
     {
       name: 'Kishore Kunal',
       role: 'Founder, CEO',
-      image: '/src/assets/kunal.jpeg'
+      image: kunalImage
     },
     {
       name: 'Rakesh Ranjan',
       role: 'CTO, Technical Head',
-      image: '/src/assets/rakesh.png'
+      image: rakeshImage
     }
   ]
 
