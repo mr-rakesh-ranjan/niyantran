@@ -123,7 +123,7 @@ const Footer = () => {
                         <div className="text-xs text-gray-200 mb-2">India's First Self-Study Revolution</div>
                         <div className="text-sm">
                             <div><span className="font-semibold text-niyantran-gold">Phone:</span> <a href="tel:+919162530024" className="hover:text-niyantran-gold transition-colors">+91 91625 30024</a></div>
-                            <div><span className="font-semibold text-niyantran-gold">Email:</span> <a href="mailto:contact@niyantran.in" className="hover:text-niyantran-gold transition-colors">contact@niyantran.in</a></div>
+                            <div><span className="font-semibold text-niyantran-gold">Email:</span> <a href="mailto:contactus@niyantran.in" className="hover:text-niyantran-gold transition-colors">contactus@niyantran.in</a></div>
                             <div><span className="font-semibold text-niyantran-gold">Website:</span> <a href="https://niyantran.in" className="hover:text-niyantran-gold transition-colors" target="_blank" rel="noopener noreferrer">niyantran.in</a></div>
                         </div>
                     </div>

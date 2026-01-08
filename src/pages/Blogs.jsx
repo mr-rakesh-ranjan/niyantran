@@ -5,23 +5,40 @@ import Footer from '../components/Footer'
 const Blogs = () => {
   const blogPosts = [
     {
-      title: "How the 4 AM Club Improves Focus",
-      excerpt: "Scientific research shows early morning hours boost cognitive performance. Discover why waking up at 4 AM transforms learning habits.",
-      date: "Dec 5, 2025",
-      readTime: "5 min read"
+      title: "Niyantran: How a Founder from Bihar is Building the World's First Self-Study Revolution (Hindustan Metro)",
+      excerpt: "Featured article on Hindustan Metro about Niyantran's journey and vision for self-study.",
+      date: "Jan 8, 2026",
+      readTime: "External Blog",
+      url: "https://www.hindustanmetro.com/niyantran-how-a-founder-from-bihar-is-building-the-worlds-first-self-study-revolution/"
     },
     {
-      title: "Building Handwriting Stamina in 7 Days",
-      excerpt: "Many students struggle with writing speed. Our proven 7-day program increases handwriting stamina by 40%.",
-      date: "Dec 3, 2025",
-      readTime: "6 min read"
+      title: "Niyantran: How a Founder from Bihar is Building the World's First Self-Study Revolution (Flipboard)",
+      excerpt: "Flipboard coverage of Niyantran's innovative approach to self-study.",
+      date: "Jan 8, 2026",
+      readTime: "External Blog",
+      url: "https://flipboard.com/@republicnewsind/-niyantran-how-a-founder-from-bihar-is-b/a-R5lnK3sJRcG0OgdK2LW6tg%3Aa%3A3544623556-2399a07a85%2Frepublicnewsindia.com"
     },
     {
-      title: "Parental Playbook: Supporting Self-Study",
-      excerpt: "Parents play a crucial role in building discipline. Learn the do's and don'ts of supporting your child's self-study journey.",
-      date: "Dec 1, 2025",
-      readTime: "8 min read"
-    }
+      title: "Niyantran: How a Founder from Bihar is Building the World's First Self-Study Revolution (Republic News India)",
+      excerpt: "Republic News India features Niyantran's founder and the self-study revolution.",
+      date: "Jan 8, 2026",
+      readTime: "External Blog",
+      url: "https://republicnewsindia.com/niyantran-how-a-founder-from-bihar-is-building-the-worlds-first-self-study-revolution/"
+    },
+    {
+      title: "Niyantran: How a Founder from Bihar is Building the World's First Self-Study Revolution (The News Brains)",
+      excerpt: "The News Brains highlights Niyantran's impact on education and self-study.",
+      date: "Jan 8, 2026",
+      readTime: "External Blog",
+      url: "https://thenewsbrains.com/niyantran-how-a-founder-from-bihar-is-building-the-worlds-first-self-study-revolution/"
+    },
+    {
+      title: "Niyantran: How a Founder from Bihar is Building the World's First Self-Study Revolution (Prime Post Daily)",
+      excerpt: "Prime Post Daily discusses the journey of Niyantran and its founder.",
+      date: "Jan 8, 2026",
+      readTime: "External Blog",
+      url: "https://primepostdaily.com/niyantran-how-a-founder-from-bihar-is-building-the-worlds-first-self-study-revolution/"
+    },
   ]
 
   return (
@@ -41,7 +58,11 @@ const Blogs = () => {
               </div>
               <h2 className="text-2xl font-bold mb-3 text-white">{post.title}</h2>
               <p className="text-gray-300 mb-4">{post.excerpt}</p>
-              <button className="text-niyantran-gold font-semibold hover:underline">Read More →</button>
+              {post.url ? (
+                <a href={post.url} target="_blank" rel="noopener noreferrer" className="text-niyantran-gold font-semibold hover:underline">Read More →</a>
+              ) : (
+                <button className="text-niyantran-gold font-semibold hover:underline">Read More →</button>
+              )}
             </article>
           ))}
         </div>
